@@ -12,4 +12,12 @@ export class Tab2Page {
     public localData: DataLocalService,
   ) {}
 
+  clearHistory(){
+    this.localData.clear();
+  }
+
+  openScan( scan ){
+    this.localData.openScan(scan);
+  }
+
 }

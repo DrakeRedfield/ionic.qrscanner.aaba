@@ -20,12 +20,12 @@ export class Tab1Page {
   
   scan(){
     this.scanner.scan().then(barcodeData => {
-      // console.log('Barcode data', barcodeData);
       if( !barcodeData.cancelled ){
         this.localData.saveScan( barcodeData.format, barcodeData.text );
       }
      }).catch(err => {
-         this.localData.saveScan( 'QR_CODE','https://www.linkedin.com/in/angel-antonio-barco-alfaro-b36b6316a/');
+        //  this.localData.saveScan( 'QR_CODE','https://www.linkedin.com/in/angel-antonio-barco-alfaro-b36b6316a/');
+         this.localData.saveScan( 'QR_CODE','geo:40.73151796986687,-74.06087294062502');
      });
   }
 

@@ -21,9 +21,11 @@
     "@angular/router": "~11.2.0",
     "@ionic-native/barcode-scanner": "^5.33.0",
     "@ionic-native/core": "^5.33.0",
+    "@ionic-native/in-app-browser": "^5.33.0",
     "@ionic/angular": "^5.5.2",
     "@ionic/storage-angular": "^3.0.6",
     "cordova-android": "^8.1.0",
+    "cordova-plugin-inappbrowser": "^4.1.0",
     "phonegap-plugin-barcodescanner": "^8.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
@@ -78,7 +80,8 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-inappbrowser": {}
     },
     "platforms": [
       "android"
