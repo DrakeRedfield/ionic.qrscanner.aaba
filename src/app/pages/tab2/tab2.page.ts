@@ -20,4 +20,8 @@ export class Tab2Page {
     this.localData.openScan(scan);
   }
 
+  sendEmail(){
+    this.localData.sendInfo();
+  }
+
 }

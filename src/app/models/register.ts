@@ -1,4 +1,6 @@
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { NavController } from '@ionic/angular';
+
 export class Record {
 
     public format: string;
@@ -25,14 +27,14 @@ export class Record {
         Functions[textStart]() || defaultFunctions();
     }
 
-    openScan(){
-        const openBrowser = new InAppBrowser();
-        const Functions = {
-            'https': ()=>{ openBrowser.create(this.text, '_system'); return true; },
-            'geo': ()=>{ return true; },
-            'undefined': () => { return false; }
-        }
-        Functions[this.type]()
-    }
+    // openScan(){
+    //     const openBrowser = new InAppBrowser();
+    //     const Functions = {
+    //         'https': ()=>{ openBrowser.create(this.text, '_system'); return true; },
+    //         'geo': ()=>{  ;return true; },
+    //         'undefined': () => { return false; }
+    //     }
+    //     Functions[this.type]()
+    // }
 
 }

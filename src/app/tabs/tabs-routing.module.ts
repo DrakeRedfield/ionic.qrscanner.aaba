@@ -13,7 +13,17 @@ const routes: Routes = [
       },
       {
         path: 'history',
-        loadChildren: () => import('../pages/tab2/tab2.module').then(m => m.Tab2PageModule)
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/tab2/tab2.module').then(m => m.Tab2PageModule)
+          },
+          {
+            path: 'mapa/:location',
+            loadChildren: () => import('../pages/mapa/mapa.module').then(m => m.MapaPageModule)
+          },
+        ]
+        // loadChildren: () => import('../pages/tab2/tab2.module').then(m => m.Tab2PageModule)
       },
       {
         path: '',

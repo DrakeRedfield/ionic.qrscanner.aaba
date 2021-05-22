@@ -25,7 +25,7 @@ export class Tab1Page {
       }
      }).catch(err => {
         //  this.localData.saveScan( 'QR_CODE','https://www.linkedin.com/in/angel-antonio-barco-alfaro-b36b6316a/');
-         this.localData.saveScan( 'QR_CODE','geo:40.73151796986687,-74.06087294062502');
+        //  this.localData.saveScan( 'QR_CODE','geo:40.73151796986687,-74.06087294062502');
      });
   }
 
