@@ -19,7 +19,7 @@ export class DataLocalService{
     private openBrowser: InAppBrowser,
     private file: ionFile,
     private toastController: ToastController,
-    private email: EmailComposer,
+    private emailComposer: EmailComposer,
   ) { 
     this.loadData();
   }
@@ -65,11 +65,10 @@ export class DataLocalService{
   }
 
   saveCSV(str: string){
-    console.log(this.file.dataDirectory);
-    this.file.checkFile( this.file.dataDirectory, 'history.csv').then( resp =>{
+    this.file.checkFile( this.file.dataDirectory, 'historyQRScanner.csv').then( resp =>{
       this.writeInFile(str);
     }).catch( error =>{
-      return this.file.createDir( this.file.dataDirectory, 'history.csv',false).then( resp =>{
+      return this.file.createFile( this.file.dataDirectory, 'historyQRScanner.csv',false).then( resp =>{
         this.writeInFile(str);
       }).catch( error =>{
         this.showMessage(`Error al crear el directorio.`);
@@ -78,27 +77,27 @@ export class DataLocalService{
   }
 
   async writeInFile( str ){
-    await this.file.writeExistingFile( this.file.dataDirectory, 'history.csv', str);
+    await this.file.writeExistingFile( this.file.dataDirectory, 'historyQRScanner.csv', str);
     this.showMessage('Se guardo correctamente.');
+    const pathFile = `${this.file.dataDirectory}historyQRScanner.csv`;
     let email = {
       to: '',
       attachments: [
-        'file://img/logo.png',
-        'res://icon.png',
-        'base64:icon.png//iVBORw0KGgoAAAANSUhEUg...',
-        'file://README.pdf'
+        pathFile
       ],
-      subject: 'Cordova Icons',
-      body: 'How are you? Nice greetings from Leipzig',
+      subject: 'Backup Scan QRScanner App',
+      body: 'Se envía el backup del historial de scans.<br/><br/><strong>QRScanner</strong>',
       isHtml: true
     }
+    this.emailComposer.open(email)
   }
 
-  showMessage(str){
-    const toast = this.toastController.create({
+  async showMessage(str){
+    const toast = await this.toastController.create({
       message: str,
       duration: 1000
     })
+    toast.present();
   }
 
 }

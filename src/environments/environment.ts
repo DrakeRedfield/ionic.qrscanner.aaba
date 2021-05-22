@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  apiKeyMap: 'pk.eyJ1IjoiZHJha2VyZWRmaWVsZDIiLCJhIjoiY2tveXpnNDNsMG53MTJwazh1aWV6ODM0byJ9.dmpBRKWlRr255Z8wxf4c1A'
+  apiKeyMap: 'ApiKeyMapBox'
 };
+
+//Visit https://www.mapbox.com/ to get an api key
 
 /*
  * For easier debugging in development mode, you can import the following file

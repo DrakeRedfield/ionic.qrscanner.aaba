@@ -26,7 +26,6 @@ export class MapaPage implements OnInit, AfterViewInit {
     text = text.split(',');
     this.lat = Number(text[0]);
     this.lng = Number(text[1]);
-    console.log(this.lat,this.lng)
   }
 
   ngAfterViewInit(){

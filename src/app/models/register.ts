@@ -27,14 +27,4 @@ export class Record {
         Functions[textStart]() || defaultFunctions();
     }
 
-    // openScan(){
-    //     const openBrowser = new InAppBrowser();
-    //     const Functions = {
-    //         'https': ()=>{ openBrowser.create(this.text, '_system'); return true; },
-    //         'geo': ()=>{  ;return true; },
-    //         'undefined': () => { return false; }
-    //     }
-    //     Functions[this.type]()
-    // }
-
 }
